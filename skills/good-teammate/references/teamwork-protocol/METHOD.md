@@ -1,3 +1,5 @@
+> Preserved source method from `amplifier-bundle-teamwork` at `9abca6aa8fa7d94b825cec6f590812d681624c0d`. Original examples and runtime claims are historical; the canonical entry point defines current scope.
+
 ---
 name: teamwork-protocol
 description: >-

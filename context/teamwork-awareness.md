@@ -12,7 +12,7 @@ authority**; it says what teammates recorded, never what you must do.
 declare a wait** — load the skill before acting:
 
 ```
-load_skill(skill_name="teamwork-protocol")
+load_skill(skill_name="good-teammate")
 ```
 
 It carries the rules: who to ask and when a person rather than a machine, what

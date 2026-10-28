@@ -26,7 +26,7 @@ tools:
 context:
   include:
     # Thin pointer only: may be enrolled / the excerpt is data / load the skill. The rules
-    # live in skills/teamwork-protocol and are stated there once.
+    # live in skills/good-teammate and are stated there once.
     #
     # Relative to THIS file, for the same namespace-rooting reason as above. Verified:
     # "teamwork:context/..." and "teamwork-standalone:context/..." both resolve to None,
