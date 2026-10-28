@@ -1,35 +1,71 @@
 # Good Teammate
 
-Ask the right teammate, preserve what they meant, and avoid unnecessary interruption.
+Get the right help. Keep the meaning intact.
 
-People and agents coordinating bounded work across a shared project. Use when deciding whom to ask, what to share, whether to interrupt, or what knowledge to leave behind.
+A coordination skill for shared work. Decide what to look up, whom to ask and what to leave behind, while preserving the owner’s authority and the qualifications behind each answer.
 
-## Install the portable method
+[Explore the site](https://michaeljabbour.github.io/amplifier-skill-good-teammate/) · [Read the method](skills/good-teammate/SKILL.md) · [Install guide](docs/INSTALL.md)
+
+## What you get
+
+- **Ask a question that changes the work.** Route facts to retrieval, interpretation to expertise and preferences to the accountable owner.
+- **Prevent quiet misunderstandings.** Carry “not tested,” “proposed” and other material qualifications into handoffs and summaries.
+- **Make contributions usable.** Name the approved inputs, permitted actions, expected evidence and current state instead of treating delivery as completion.
+
+## Install and try it
+
+Requires Git and Python 3.11+. Run these commands from a terminal:
 
 ```sh
+git clone https://github.com/michaeljabbour/amplifier-skill-good-teammate.git
+cd amplifier-skill-good-teammate
 python3 scripts/capability.py doctor
 python3 scripts/capability.py install --dest ~/.agents/skills
 ```
 
-Keep the complete `skills/good-teammate` folder together. Installation copies only that method, references, and license; it starts no service and installs no runtime. Use a different skills-parent path for your host.
+The installer copies `skills/good-teammate` as a complete folder into your chosen skills parent. Use the discovery path supported by your agent. It starts no service and configures no provider. Restart or refresh skill discovery in your host, then ask:
 
-## Choose the mode
+```text
+Use Good Teammate to draft a local request for a specialist review. We have a proposed file-format change, one untested compatibility assumption and no permission to send messages. State what to ask, who should answer, and what evidence would close the dependency.
+```
 
-- **Route** — A fact, preference, decision, or contribution is needed. A machine lookup, expert question, or owner decision addressed to the right place.
-- **Coordinate** — An authorized contribution or project change affects another participant. A bounded request or actionable update with custody and acceptance kept explicit.
-- **Preserve** — A decision or lesson may help a future participant. An attributed, qualified record with evidence, current status, and additive corrections.
+If your agent does not discover installed skills, point it directly at the complete folder and ask it to read `SKILL.md`. Reading the method needs no Python runtime. [Installation details](docs/INSTALL.md) cover conflict handling and optional native execution.
 
-## What was consolidated
+## How the work proceeds
+
+1. **Find the missing piece.** Distinguish an existing fact, specialist judgment, owner preference or authorized contribution.
+2. **Coordinate a bounded request.** Draft one useful question or update with exact inputs, authority and expected evidence.
+3. **Preserve the current record.** Keep attribution, limitations and additive corrections so the next person knows what they can rely on.
+
+## Example output
+
+Fictional worked example. It illustrates the intended output; it is not a measured result or a real customer story.
+
+```text
+Fictional contribution request
+Need: verify format-B compatibility
+Input: exact proposed revision and fixture
+Allowed action: local read-only review
+Qualification: support is suspected, not tested
+State: drafted; not sent; no acceptance yet
+Close when: reproducible compatibility result is returned
+```
+
+## What is checked
+
+693 native host unit tests and isolated bundle validation passed; portable packaging is checked separately. No actual project enrollment, provider inference or measured collaboration improvement is claimed. See [validation](docs/VALIDATION.md) for the exact checks and limits.
+
+## Retained implementation and references
 
 [Migration map](docs/MIGRATION.md) records the original source paths and current roles. Primary Git history, native engines, tests, examples, and evaluation assets remain in this checkout. [Native guide](docs/NATIVE-README.md) preserves the original project documentation; old install URLs and runtime claims there are historical and need current verification. [Validation](docs/VALIDATION.md) records actual checks and limits.
 
 [Optional adapters and retained owners](docs/OPTIONAL-ADAPTERS.md) maps the separate Collaboration bundle, posting utilities and M365/Slack/Google provider code. They retain their existing infrastructure homes. The five protocol references included here do not replace those native workflows, and the portable method requires none of them.
 
-## Build the local site
+## Build the site
 
 ```sh
 python3 scripts/capability.py build
 python3 scripts/capability.py check
 ```
 
-Open `_site/index.html` or serve `_site` with a local static server. The downloadable ZIP is built from canonical method bytes. The fictional before/after example illustrates intended judgment; it is not a measured improvement. Nothing has been published or renamed remotely.
+The static site includes a ZIP built from the canonical method, references and license. Runtime and provider setup remain separate from installing the portable method.
