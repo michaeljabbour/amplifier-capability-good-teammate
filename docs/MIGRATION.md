@@ -17,3 +17,5 @@ Original examples/claims are retained as source evidence, not new benchmark clai
 - `amplifier-bundle-collaboration` at `d44ab2bf26fd68807b5e0b43fb884301886bac3e`: Secondary method/reference consolidation. Original source identity and history retained. Paths: `ARCHITECTURE.md`, `behaviors/collaboration-protocol.md`, `behaviors/workspace-conventions.md`, `docs/COMPONENT_CATALOG.md`, `docs/PROVIDER_INTERFACES.md`.
 
 Secondary ancestry is retained in merge commits using an ours strategy; selected procedures/contracts are imported deliberately, rather than overlaying unrelated engine trees. No original repository has been removed.
+
+The original native Git self-source is retained for release compatibility. Namespace-shaped skill paths are not assumed to work in older tool-skills loaders. The explicit local materializer resolves the canonical checkout skill and native module paths into a YAML behavior, validated with Foundation, while preserving the caller’s provider/session.

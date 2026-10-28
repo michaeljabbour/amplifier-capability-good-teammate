@@ -33,7 +33,7 @@
       "name": "Native host unit suite",
       "command": "<configured-amplifier-python> -m unittest discover -s tests -v",
       "status": "passed",
-      "evidence": "691 tests in 71.289s; fake/isolated services and Foundation composition. No current project enrollment or provider inference.",
+      "evidence": "693 tests passed after the local-discovery correction, including two new materialization tests; no actual project enrollment or provider inference.",
       "expected": "The stated scope passes; no broader result inferred."
     },
     {
@@ -56,6 +56,13 @@
       "status": "passed",
       "expected": "Valid required frontmatter, naming, and complete scaffold.",
       "evidence": "Skill is valid. This is a structural check, not a behavioral benchmark."
+    },
+    {
+      "name": "Native canonical skill discovery configuration",
+      "command": "uv run --with PyYAML python scripts/local_runtime.py --output .capability-check/good-teammate.yaml; Foundation load_bundle/validate_bundle; local-runtime and guidance tests",
+      "status": "passed",
+      "expected": "Explicit absolute checkout paths resolve without changing host provider/session.",
+      "evidence": "Generated YAML accepted by the actual Foundation loader; two local-runtime and two guidance composition checks pass. Native release Git self-source remains preserved; namespace-shaped paths are not assumed to resolve in older tool-skills."
     }
   ],
   "limitations": [
@@ -63,5 +70,5 @@
     "Fictional examples are authored illustrations, not observed outcomes.",
     "Retained historical evaluation assets keep their original scope; renamed portable-method effectiveness is unmeasured."
   ],
-  "changes": "Portable coordination/qualification contract, source scenarios and native opt-in engine retained; local canonical skill resolution."
+  "changes": "Portable coordination/qualification contract, source scenarios and native opt-in engine retained; local canonical skill resolution. Corrected local-development discovery through an explicit YAML materializer while retaining the native release Git self-source."
 }

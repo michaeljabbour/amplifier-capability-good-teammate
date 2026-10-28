@@ -10,3 +10,5 @@
 ## Native repair and checks
 
 Portable coordination/qualification contract, source scenarios and native opt-in engine retained; local canonical skill resolution. See `docs/VALIDATION.md` and its dated record for actual results and explicit limits.
+
+Added explicit local YAML materialization and an actual Foundation-loader check after discovering that namespace-shaped sources are not resolved by older tool-skills. Retained the native release Git self-source; no current project enrollment or activation.

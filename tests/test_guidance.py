@@ -34,7 +34,7 @@ class GuidanceComposition(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(skills["source"], "fixture")
         self.assertEqual(skills["config"]["skills"], [
             "existing-skills",
-            "@teamwork:../skills",
+            "git+https://github.com/michaeljabbour/amplifier-bundle-teamwork@main#subdirectory=skills",
         ])
         self.assertEqual(composed.providers, primary.providers)
         self.assertFalse(self.behavior.hooks[0].get("config", {}).get("share_visible_turns", False))
