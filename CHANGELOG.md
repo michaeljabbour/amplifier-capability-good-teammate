@@ -12,3 +12,8 @@
 Portable coordination/qualification contract, source scenarios and native opt-in engine retained; local canonical skill resolution. See `docs/VALIDATION.md` and its dated record for actual results and explicit limits.
 
 Added explicit local YAML materialization and an actual Foundation-loader check after discovering that namespace-shaped sources are not resolved by older tool-skills. Retained the native release Git self-source; no current project enrollment or activation.
+
+## 2026-10-28 — Make retained optional owners explicit
+
+- Link exact native/reference asset homes, unique interfaces and current evidence limits in `docs/OPTIONAL-ADAPTERS.md`. This is a partial reference extraction, not a claim of a completed executable merge.
+- Keep the portable method independent; canonical method/native engine and dated evaluation files remain unchanged. No provider, credential, messaging or generation operation.

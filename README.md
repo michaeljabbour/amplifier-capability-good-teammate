@@ -23,6 +23,8 @@ Keep the complete `skills/good-teammate` folder together. Installation copies on
 
 [Migration map](docs/MIGRATION.md) records the original source paths and current roles. Primary Git history, native engines, tests, examples, and evaluation assets remain in this checkout. [Native guide](docs/NATIVE-README.md) preserves the original project documentation; old install URLs and runtime claims there are historical and need current verification. [Validation](docs/VALIDATION.md) records actual checks and limits.
 
+[Optional adapters and retained owners](docs/OPTIONAL-ADAPTERS.md) maps the separate Collaboration bundle, posting utilities and M365/Slack/Google provider code. They retain their existing infrastructure homes. The five protocol references included here do not replace those native workflows, and the portable method requires none of them.
+
 ## Build the local site
 
 ```sh
