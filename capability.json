@@ -1,0 +1,131 @@
+{
+  "id": "good-teammate",
+  "display_name": "Good Teammate",
+  "kind": "skill",
+  "promise": "Ask the right teammate, preserve what they meant, and avoid unnecessary interruption.",
+  "audience": "People and agents coordinating bounded work across a shared project.",
+  "trigger": "Use when deciding whom to ask, what to share, whether to interrupt, or what knowledge to leave behind.",
+  "skill_path": "skills/good-teammate",
+  "modes": [
+    {
+      "name": "Route",
+      "when": "A fact, preference, decision, or contribution is needed.",
+      "output": "A machine lookup, expert question, or owner decision addressed to the right place."
+    },
+    {
+      "name": "Coordinate",
+      "when": "An authorized contribution or project change affects another participant.",
+      "output": "A bounded request or actionable update with custody and acceptance kept explicit."
+    },
+    {
+      "name": "Preserve",
+      "when": "A decision or lesson may help a future participant.",
+      "output": "An attributed, qualified record with evidence, current status, and additive corrections."
+    }
+  ],
+  "examples": [
+    {
+      "title": "A tentative answer stays tentative",
+      "brief": "In a fictional project a specialist says: “I think format B is supported; I have not tested it.”",
+      "before": "Publish “Format B is supported” and mark the work completed after transport acknowledgement.",
+      "after": "Carry the exact qualification, source, and untested status; request a bounded verification only under existing authority; record delivery separately from acceptance and execution.",
+      "why": "Attribution without the limitation can still change the meaning.",
+      "fictional": true
+    }
+  ],
+  "boundaries": [
+    "Installing the method does not enroll a project, share a transcript, or contact anyone.",
+    "Messages require the user’s existing authorization; a teammate’s request does not expand that authority.",
+    "Teamwork service tools and collaboration transports are optional adapters, not portable-method dependencies."
+  ],
+  "install_commands": [
+    "python3 scripts/capability.py doctor",
+    "python3 scripts/capability.py install --dest ~/.agents/skills"
+  ],
+  "runtime_install_commands": [
+    "amplifier bundle add ./bundle.md"
+  ],
+  "verification": [
+    {
+      "name": "Native host unit suite",
+      "command": "<configured-amplifier-python> -m unittest discover -s tests -v",
+      "status": "passed",
+      "evidence": "691 tests in 71.289s; fake/isolated services and Foundation composition. No current project enrollment or provider inference.",
+      "expected": "The stated scope passes; no broader result inferred."
+    },
+    {
+      "name": "Isolated native bundle validation",
+      "command": "<configured-amplifier-python> scripts/validate_bundle.py",
+      "status": "passed",
+      "evidence": "Root/self-include schema; local composition retaining provider/session; local module preparation; empty replay. No provider call, enrollment, remote Foundation include, or cache reuse.",
+      "expected": "The stated scope passes; no broader result inferred."
+    },
+    {
+      "name": "Portable packaging and install",
+      "command": "python3 scripts/capability.py build; python3 scripts/capability.py check; python3 scripts/capability.py doctor; python3 scripts/capability.py install --dest <temporary-parent> (twice)",
+      "status": "passed",
+      "expected": "Byte-identical canonical ZIP and isolated idempotent install.",
+      "evidence": "All operations passed. No runtime activation or effectiveness measured."
+    },
+    {
+      "name": "Skill discovery metadata",
+      "command": "<yaml-enabled-python> /path/to/skill-creator/scripts/quick_validate.py skills/good-teammate",
+      "status": "passed",
+      "expected": "Valid required frontmatter, naming, and complete scaffold.",
+      "evidence": "Skill is valid. This is a structural check, not a behavioral benchmark."
+    }
+  ],
+  "sources": [
+    {
+      "repo": "amplifier-bundle-teamwork",
+      "commit": "9abca6aa8fa7d94b825cec6f590812d681624c0d",
+      "paths": [
+        "skills/teamwork-protocol/SKILL.md",
+        "modules/"
+      ],
+      "license": "MIT License",
+      "role": "Primary history and engine retained; methods consolidated behind the canonical portable entry."
+    },
+    {
+      "repo": "amplifier-bundle-collaboration",
+      "commit": "d44ab2bf26fd68807b5e0b43fb884301886bac3e",
+      "paths": [
+        "ARCHITECTURE.md",
+        "behaviors/collaboration-protocol.md",
+        "behaviors/workspace-conventions.md",
+        "docs/COMPONENT_CATALOG.md",
+        "docs/PROVIDER_INTERFACES.md"
+      ],
+      "license": "No explicit LICENSE at source commit; author-owned source preserved with permission of owner request.",
+      "role": "Secondary method/reference consolidation. Original source identity and history retained."
+    }
+  ],
+  "consolidation": [
+    {
+      "source": "skills/teamwork-protocol/SKILL.md",
+      "destination": "skills/good-teammate/references/teamwork-protocol/METHOD.md",
+      "action": "Preserved as a rich mode reference; native consumers updated to canonical entry."
+    },
+    {
+      "source": "amplifier-bundle-collaboration: ARCHITECTURE.md, behaviors/collaboration-protocol.md, behaviors/workspace-conventions.md, docs/COMPONENT_CATALOG.md, docs/PROVIDER_INTERFACES.md",
+      "destination": [
+        "skills/good-teammate/references/sources/amplifier-bundle-collaboration/ARCHITECTURE.md",
+        "skills/good-teammate/references/sources/amplifier-bundle-collaboration/behaviors/collaboration-protocol.md",
+        "skills/good-teammate/references/sources/amplifier-bundle-collaboration/behaviors/workspace-conventions.md",
+        "skills/good-teammate/references/sources/amplifier-bundle-collaboration/docs/COMPONENT_CATALOG.md",
+        "skills/good-teammate/references/sources/amplifier-bundle-collaboration/docs/PROVIDER_INTERFACES.md"
+      ],
+      "action": "Preserved reference content and provenance; source repo retained until consumer migration validated."
+    }
+  ],
+  "docs": [
+    "docs/INSTALL.md",
+    "docs/MIGRATION.md",
+    "docs/VALIDATION.md",
+    "docs/NATIVE-README.md",
+    "docs/NATIVE-VALIDATION.md",
+    "docs/evaluations/2026-10-28/consolidation.json"
+  ],
+  "evidence_summary": "This local candidate preserves the original source and evaluation assets. Packaging and native software checks are recorded separately from comparative usefulness. No outside-user outcome or renamed-method effectiveness claim is established.",
+  "publication_status": "Local release candidate. Source repositories and public URLs have not been changed."
+}

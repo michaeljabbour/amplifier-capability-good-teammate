@@ -1,0 +1,25 @@
+[
+  {
+    "repo": "amplifier-bundle-teamwork",
+    "commit": "9abca6aa8fa7d94b825cec6f590812d681624c0d",
+    "paths": [
+      "skills/teamwork-protocol/SKILL.md",
+      "modules/"
+    ],
+    "license": "MIT License",
+    "role": "Primary history and engine retained; methods consolidated behind the canonical portable entry."
+  },
+  {
+    "repo": "amplifier-bundle-collaboration",
+    "commit": "d44ab2bf26fd68807b5e0b43fb884301886bac3e",
+    "paths": [
+      "ARCHITECTURE.md",
+      "behaviors/collaboration-protocol.md",
+      "behaviors/workspace-conventions.md",
+      "docs/COMPONENT_CATALOG.md",
+      "docs/PROVIDER_INTERFACES.md"
+    ],
+    "license": "No explicit LICENSE at source commit; author-owned source preserved with permission of owner request.",
+    "role": "Secondary method/reference consolidation. Original source identity and history retained."
+  }
+]

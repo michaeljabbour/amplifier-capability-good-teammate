@@ -482,7 +482,7 @@ async def run(args):
     bundle_source, app_source = args.bundle_source, args.app_source
     mechanism_paths = list((bundle_source / "modules/hooks-teamwork").rglob("*.py"))
     service_paths = list((app_source / "backend").rglob("*.py"))
-    guidance_paths = [bundle_source / "context/teamwork-awareness.md", bundle_source / "skills/teamwork-protocol/SKILL.md"]
+    guidance_paths = [bundle_source / "context/teamwork-awareness.md", bundle_source / "skills/good-teammate/references/teamwork-protocol/METHOD.md"]
     enrollment_paths = [bundle_source / "setup_teamwork.py"]
     source = {"bundle_commit": source_identity(bundle_source, "modules/hooks-teamwork", measured_paths=mechanism_paths, expected=args.bundle_commit),
               "app_commit": source_identity(app_source, "backend", measured_paths=service_paths, expected=args.app_commit),

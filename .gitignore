@@ -17,3 +17,9 @@ teamwork-overlay*
 # See evals/*/README.md. Never commit a run's session data,
 # transcripts, or reports.
 evals/*/results/
+
+# Capability build and local verification
+_site/
+.venv-capability/
+.capability-check/
+__pycache__/

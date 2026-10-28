@@ -10,7 +10,7 @@ guidance. Live execution is disabled.
 The intended treatment consists of:
 
 - `context/teamwork-awareness.md`, the always-on pointer;
-- `skills/teamwork-protocol/SKILL.md`, the on-demand guidance;
+- `skills/good-teammate/references/teamwork-protocol/METHOD.md`, the on-demand guidance;
 - only the corresponding skill/context wiring in `behaviors/teamwork.yaml`.
 
 Before trials can run, construct both arms from one immutable base and apply
