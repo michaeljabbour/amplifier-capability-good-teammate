@@ -2,6 +2,8 @@
 
 Get the right help. Keep the meaning intact.
 
+Watch the [67-second film](https://michaeljabbour.github.io/amplifier-skill-good-teammate/#film): a careful "not tested" that turns into a billboard, and how the skill keeps the fine print attached. The example in it is fictional.
+
 A coordination skill for shared work. Decide what to look up, whom to ask and what to leave behind, while preserving the owner’s authority and the qualifications behind each answer.
 
 [Explore the site](https://michaeljabbour.github.io/amplifier-skill-good-teammate/) · [Read the method](skills/good-teammate/SKILL.md) · [Install guide](docs/INSTALL.md)

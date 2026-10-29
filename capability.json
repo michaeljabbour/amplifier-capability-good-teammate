@@ -187,5 +187,12 @@
       "Keep the complete installed folder, references and license together. Identical reinstall is safe; conflicts are refused. A deliberate --replace keeps a dated backup."
     ]
   },
-  "repository_url": "https://github.com/michaeljabbour/amplifier-skill-good-teammate"
+  "repository_url": "https://github.com/michaeljabbour/amplifier-skill-good-teammate",
+  "film": {
+    "file": "good-teammate-film",
+    "seconds": 67,
+    "heading": "The asterisk.",
+    "blurb": "In 67 seconds, a specialist's careful \"I think format B works, not tested\" loses its asterisk on the way to a billboard. Good Teammate keeps the fine print attached: it routes each question to whoever should answer it, drafts one bounded request with the doubt left in, and marks it drafted, not sent, when it has no permission to send. Captions are on the player; a transcript is below.",
+    "note": "Noor, Teo and the photo app are a fictional example. Better teamwork is not measured; the film shows how the skill behaves and reports no results."
+  }
 }
