@@ -26,8 +26,8 @@
   "examples": [
     {
       "title": "A tentative answer stays tentative",
-      "brief": "In a fictional project a specialist says: “I think format B is supported; I have not tested it.”",
-      "before": "Publish “Format B is supported” and mark the work completed after transport acknowledgement.",
+      "brief": "In a fictional project a specialist says: \u201cI think format B is supported; I have not tested it.\u201d",
+      "before": "Publish \u201cFormat B is supported\u201d and mark the work completed after transport acknowledgement.",
       "after": "Carry the exact qualification, source, and untested status; request a bounded verification only under existing authority; record delivery separately from acceptance and execution.",
       "why": "Attribution without the limitation can still change the meaning.",
       "fictional": true
@@ -35,7 +35,7 @@
   ],
   "boundaries": [
     "Installing the method does not enroll a project, share a transcript, or contact anyone.",
-    "Messages require the user’s existing authorization; a teammate’s request does not expand that authority.",
+    "Messages require the user\u2019s existing authorization; a teammate\u2019s request does not expand that authority.",
     "Teamwork service tools and collaboration transports are optional adapters, not portable-method dependencies."
   ],
   "install_commands": [
@@ -138,7 +138,7 @@
   "publication_status": "Installation and evidence scopes are documented below.",
   "marketing": {
     "headline": "Get the right help. Keep the meaning intact.",
-    "lead": "A coordination skill for shared work. Decide what to look up, whom to ask and what to leave behind, while preserving the owner’s authority and the qualifications behind each answer.",
+    "lead": "A coordination skill for shared work. Decide what to look up, whom to ask and what to leave behind, while preserving the owner\u2019s authority and the qualifications behind each answer.",
     "benefits": [
       {
         "title": "Ask a question that changes the work",
@@ -146,7 +146,7 @@
       },
       {
         "title": "Prevent quiet misunderstandings",
-        "body": "Carry “not tested,” “proposed” and other material qualifications into handoffs and summaries."
+        "body": "Carry \u201cnot tested,\u201d \u201cproposed\u201d and other material qualifications into handoffs and summaries."
       },
       {
         "title": "Make contributions usable",
@@ -187,12 +187,97 @@
       "Keep the complete installed folder, references and license together. Identical reinstall is safe; conflicts are refused. A deliberate --replace keeps a dated backup."
     ]
   },
-  "repository_url": "https://github.com/michaeljabbour/amplifier-skill-good-teammate",
+  "repository_url": "https://github.com/michaeljabbour/amplifier-capability-good-teammate",
+  "name": "amplifier-capability-good-teammate",
+  "legacy_names": [
+    "amplifier-skill-good-teammate",
+    "good-teammate"
+  ],
+  "contract_version": "amplifier-capability/v1",
+  "version": null,
+  "version_basis": "No release version recorded; installer requires a full Git revision pin.",
+  "engine": "LLM",
+  "engine_components": {
+    "caller_method": "LLM"
+  },
+  "surfaces": [
+    "agent-skills",
+    "amplifier-bundle"
+  ],
+  "portable_method": {
+    "name": "good-teammate",
+    "path": "skills/good-teammate",
+    "include": [
+      "."
+    ],
+    "contract": "Agent Skills directory; caller applies the method; no independent execution loop is installed."
+  },
+  "interfaces": {
+    "portable": {
+      "input": "Caller task and explicitly authorized context",
+      "output": "Ask the right teammate, preserve what they meant, and avoid unnecessary interruption.",
+      "failure": "Report insufficient evidence, unsupported context or host limitation; never turn discovery into an execution claim."
+    },
+    "native": {
+      "distribution": null,
+      "entrypoints": {},
+      "docs": [
+        "docs/INSTALL.md",
+        "docs/MIGRATION.md",
+        "docs/VALIDATION.md",
+        "docs/NATIVE-README.md",
+        "docs/NATIVE-VALIDATION.md",
+        "docs/evaluations/2026-10-28/consolidation.json",
+        "docs/OPTIONAL-ADAPTERS.md"
+      ],
+      "status": "Existing declared entrypoints preserved; runtime signatures, service access and installation tests remain separate evidence."
+    },
+    "host_adapters": {
+      "amplifier_bundle": "bundle.md",
+      "grants_autonomy": false
+    }
+  },
+  "permissions": {
+    "installation": {
+      "network": false,
+      "executes_capability_code": false,
+      "writes": [
+        "Selected discovery folders",
+        ".capability-state transaction backups"
+      ],
+      "grants_runtime_permissions": false
+    },
+    "runtime": {
+      "status": "Host/caller authorizes each operation; installation is not a tool allowlist or standing approval.",
+      "declared_boundaries": [
+        "Installing the method does not enroll a project, share a transcript, or contact anyone.",
+        "Messages require the user\u2019s existing authorization; a teammate\u2019s request does not expand that authority.",
+        "Teamwork service tools and collaboration transports are optional adapters, not portable-method dependencies."
+      ]
+    },
+    "secret_names": {
+      "discovery_requires": [],
+      "native_runtime_inventory": "See native documentation; no credentials are bundled or inferred."
+    }
+  },
+  "dataflow": {
+    "installation": "Read pinned tracked portable source and copy locally with SHA-256 receipts. No source text is transmitted.",
+    "method": "Caller supplies authorized context; existing promise and boundaries govern output.",
+    "native_runtime": "Provider/network/storage flows are owned by native interfaces and host authorization; these files do not enable them."
+  },
+  "source_policy": {
+    "revision": "Explicit full40-character Git commit required at installation; never infer latest.",
+    "repository_rename": "Public identity may change; skill folder, imports, entrypoints, tool IDs and schemas remain stable.",
+    "research": ".research/market remains local and ignored; AGENTS governs refresh."
+  },
   "film": {
     "file": "good-teammate-film",
     "seconds": 67,
     "heading": "The asterisk.",
     "blurb": "In 67 seconds, a specialist's careful \"I think format B works, not tested\" loses its asterisk on the way to a billboard. Good Teammate keeps the fine print attached: it routes each question to whoever should answer it, drafts one bounded request with the doubt left in, and marks it drafted, not sent, when it has no permission to send. Captions are on the player; a transcript is below.",
     "note": "Noor, Teo and the photo app are a fictional example. Better teamwork is not measured; the film shows how the skill behaves and reports no results."
-  }
+  },
+  "repository_aliases": [
+    "https://github.com/michaeljabbour/amplifier-skill-good-teammate"
+  ]
 }
