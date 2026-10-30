@@ -26,8 +26,8 @@
   "examples": [
     {
       "title": "A tentative answer stays tentative",
-      "brief": "In a fictional project a specialist says: “I think format B is supported; I have not tested it.”",
-      "before": "Publish “Format B is supported” and mark the work completed after transport acknowledgement.",
+      "brief": "In a fictional project a specialist says: \u201cI think format B is supported; I have not tested it.\u201d",
+      "before": "Publish \u201cFormat B is supported\u201d and mark the work completed after transport acknowledgement.",
       "after": "Carry the exact qualification, source, and untested status; request a bounded verification only under existing authority; record delivery separately from acceptance and execution.",
       "why": "Attribution without the limitation can still change the meaning.",
       "fictional": true
@@ -35,7 +35,7 @@
   ],
   "boundaries": [
     "Installing the method does not enroll a project, share a transcript, or contact anyone.",
-    "Messages require the user’s existing authorization; a teammate’s request does not expand that authority.",
+    "Messages require the user\u2019s existing authorization; a teammate\u2019s request does not expand that authority.",
     "Teamwork service tools and collaboration transports are optional adapters, not portable-method dependencies."
   ],
   "install_commands": [
@@ -138,7 +138,7 @@
   "publication_status": "Installation and evidence scopes are documented below.",
   "marketing": {
     "headline": "Get the right help. Keep the meaning intact.",
-    "lead": "A coordination skill for shared work. Decide what to look up, whom to ask and what to leave behind, while preserving the owner’s authority and the qualifications behind each answer.",
+    "lead": "A coordination skill for shared work. Decide what to look up, whom to ask and what to leave behind, while preserving the owner\u2019s authority and the qualifications behind each answer.",
     "benefits": [
       {
         "title": "Ask a question that changes the work",
@@ -146,7 +146,7 @@
       },
       {
         "title": "Prevent quiet misunderstandings",
-        "body": "Carry “not tested,” “proposed” and other material qualifications into handoffs and summaries."
+        "body": "Carry \u201cnot tested,\u201d \u201cproposed\u201d and other material qualifications into handoffs and summaries."
       },
       {
         "title": "Make contributions usable",
@@ -187,12 +187,127 @@
       "Keep the complete installed folder, references and license together. Identical reinstall is safe; conflicts are refused. A deliberate --replace keeps a dated backup."
     ]
   },
-  "repository_url": "https://github.com/michaeljabbour/amplifier-skill-good-teammate",
+  "repository_url": "https://github.com/michaeljabbour/amplifier-capability-good-teammate",
+  "name": "amplifier-capability-good-teammate",
+  "legacy_names": [
+    "amplifier-skill-good-teammate",
+    "good-teammate"
+  ],
+  "contract_version": "amplifier-capability/v1",
+  "version": null,
+  "version_basis": "No project version recorded; version remains null. The shared portable installer selects source with an explicit full Git commit; legacy and native routes follow their own documentation.",
+  "engine": "LLM",
+  "engine_components": {
+    "caller_method": "LLM"
+  },
+  "surfaces": [
+    "agent-skills",
+    "amplifier-bundle"
+  ],
+  "portable_method": {
+    "name": "good-teammate",
+    "path": "skills/good-teammate",
+    "include": [
+      "."
+    ],
+    "contract": "Agent Skills directory; caller applies the method; no independent execution loop is installed."
+  },
+  "interfaces": {
+    "portable": {
+      "input": "Caller task and explicitly authorized context",
+      "output": "Ask the right teammate, preserve what they meant, and avoid unnecessary interruption.",
+      "failure": "Report insufficient evidence, unsupported context or host limitation; never turn discovery into an execution claim."
+    },
+    "native": {
+      "distribution": null,
+      "entrypoints": {},
+      "docs": [
+        "docs/INSTALL.md",
+        "docs/MIGRATION.md",
+        "docs/VALIDATION.md",
+        "docs/NATIVE-README.md",
+        "docs/NATIVE-VALIDATION.md",
+        "docs/evaluations/2026-10-28/consolidation.json",
+        "docs/OPTIONAL-ADAPTERS.md"
+      ],
+      "status": "Existing declared entrypoints preserved; runtime signatures, service access and installation tests remain separate evidence."
+    },
+    "host_adapters": {
+      "amplifier_bundle": "bundle.md",
+      "grants_autonomy": false
+    }
+  },
+  "permissions": {
+    "installation": {
+      "network": false,
+      "executes_capability_code": false,
+      "writes": [
+        "Selected discovery folders",
+        ".capability-state transaction backups"
+      ],
+      "grants_runtime_permissions": false,
+      "scope": "Shared canonical portable installer only; not the legacy repository helper or native package installation.",
+      "installer_url": "https://michaeljabbour.github.io/reports/capability-installer/"
+    },
+    "runtime": {
+      "status": "Host/caller authorizes each operation; installation is not a tool allowlist or standing approval.",
+      "declared_boundaries": [
+        "Installing the method does not enroll a project, share a transcript, or contact anyone.",
+        "Messages require the user\u2019s existing authorization; a teammate\u2019s request does not expand that authority.",
+        "Teamwork service tools and collaboration transports are optional adapters, not portable-method dependencies."
+      ]
+    },
+    "secret_names": {
+      "discovery_requires": [],
+      "native_runtime_inventory": "See native documentation; no credentials are bundled or inferred."
+    }
+  },
+  "dataflow": {
+    "installation": "Shared canonical portable installer only (https://michaeljabbour.github.io/reports/capability-installer/): read portable source tracked at the explicit Git pin and copy locally with SHA-256 receipts; no source text is transmitted. Legacy repository helpers copy current working-tree files and do not uniformly enforce Git pins, tracked membership or hash receipts. Native package builds and downloads have separate network, execution and storage flows described in their installation documentation.",
+    "method": "Caller supplies authorized context; existing promise and boundaries govern output.",
+    "native_runtime": "Provider/network/storage flows are owned by native interfaces and host authorization; these files do not enable them."
+  },
+  "source_policy": {
+    "revision": "The shared canonical portable installer (https://michaeljabbour.github.io/reports/capability-installer/) requires an explicit full 40-character Git commit and never infers latest. This guarantee does not apply uniformly to legacy or native installers; the legacy repository helper is an operator-controlled working-tree copy without Git-pin, tracked-membership or SHA-256 receipt enforcement.",
+    "repository_rename": "Public identity may change; skill folder, imports, entrypoints, tool IDs and schemas remain stable.",
+    "research": ".research/market remains local and ignored; AGENTS governs refresh."
+  },
   "film": {
     "file": "good-teammate-film",
     "seconds": 67,
     "heading": "The asterisk.",
     "blurb": "In 67 seconds, a specialist's careful \"I think format B works, not tested\" loses its asterisk on the way to a billboard. Good Teammate keeps the fine print attached: it routes each question to whoever should answer it, drafts one bounded request with the doubt left in, and marks it drafted, not sent, when it has no permission to send. Captions are on the player; a transcript is below.",
     "note": "Noor, Teo and the photo app are a fictional example. Better teamwork is not measured; the film shows how the skill behaves and reports no results."
+  },
+  "repository_aliases": [
+    "https://github.com/michaeljabbour/amplifier-skill-good-teammate"
+  ],
+  "installation_routes": {
+    "shared_portable": {
+      "documentation_url": "https://michaeljabbour.github.io/reports/capability-installer/",
+      "source_url": "https://github.com/michaeljabbour/michaeljabbour.github.io/blob/main/tools/capability.py",
+      "applies_when": "portable_method is declared; otherwise describe native interfaces without executing installation",
+      "guarantees": [
+        "Explicit full Git commit pin",
+        "Tracked portable source membership and source-byte checks",
+        "SHA-256 plan and transaction receipts"
+      ],
+      "does_not": [
+        "Execute capability code",
+        "Install native packages or dependencies",
+        "Grant runtime permissions",
+        "Prove harness behavior"
+      ]
+    },
+    "legacy_repository": {
+      "documentation": "Existing install_commands and repository installation documentation, where provided.",
+      "source_policy": "Operator-controlled current working-tree copy. It can include untracked files and can operate outside a Git checkout; no uniform Git pin or SHA-256 transaction receipt is enforced.",
+      "permissions": "Review the specific command and destination; shared-installer transaction and permission guarantees do not describe this route."
+    },
+    "native": {
+      "documentation": "interfaces.native, runtime_install_commands and project installation documentation, where provided.",
+      "source_policy": "Native packaging, host composition and download routes retain their own version and provenance rules; shared portable receipt guarantees do not automatically apply.",
+      "permissions": "Package builds may execute build tools; dependency or artifact downloads may use the network. Review the documented command, dependencies, destination and runtime authorization separately."
+    }
   }
 }
