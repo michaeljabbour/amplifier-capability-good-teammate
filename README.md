@@ -2,11 +2,11 @@
 
 Get the right help. Keep the meaning intact.
 
-Watch the [67-second film](https://michaeljabbour.github.io/amplifier-skill-good-teammate/#film): a careful "not tested" that turns into a billboard, and how the skill keeps the fine print attached. The example in it is fictional.
+Watch the [67-second film](https://michaeljabbour.github.io/amplifier-capability-good-teammate/#film): a careful "not tested" that turns into a billboard, and how the skill keeps the fine print attached. The example in it is fictional.
 
 A coordination skill for shared work. Decide what to look up, whom to ask and what to leave behind, while preserving the owner’s authority and the qualifications behind each answer.
 
-[Explore the site](https://michaeljabbour.github.io/amplifier-skill-good-teammate/) · [Read the method](skills/good-teammate/SKILL.md) · [Install guide](docs/INSTALL.md)
+[Explore the site](https://michaeljabbour.github.io/amplifier-capability-good-teammate/) · [Read the method](skills/good-teammate/SKILL.md) · [Install guide](docs/INSTALL.md)
 
 ## What you get
 
@@ -19,8 +19,8 @@ A coordination skill for shared work. Decide what to look up, whom to ask and wh
 Requires Git and Python 3.11+. Run these commands from a terminal:
 
 ```sh
-git clone https://github.com/michaeljabbour/amplifier-skill-good-teammate.git
-cd amplifier-skill-good-teammate
+git clone https://github.com/michaeljabbour/amplifier-capability-good-teammate.git
+cd amplifier-capability-good-teammate
 python3 scripts/capability.py doctor
 python3 scripts/capability.py install --dest ~/.agents/skills
 ```
