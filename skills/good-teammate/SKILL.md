@@ -31,3 +31,7 @@ For durable knowledge ask whether this changes what somebody should do on a diff
 No permitted transport: draft a local request, state that it was not sent. No reply: keep pending. Missing evidence: preserve the uncertainty rather than minting a record ID. Never enroll the current project or share transcripts merely to make the method usable.
 
 Return route and reason; request/update or deliberate decision not to interrupt; authority; current state; preserved qualifications; result evidence; unresolved dependency and next action. The retained Teamwork tests evaluate software/scenario contracts; they do not establish that this renamed method improves collaboration.
+
+## Optional coaching checkpoint
+
+Read [the local coaching guide](references/coaching-session.v1.md) only when the person asks for practice or optional session bookkeeping. Keep direct artifact production available; agree a small budget, preserve the baseline and stop on goal, user exit or no meaningful gain.
