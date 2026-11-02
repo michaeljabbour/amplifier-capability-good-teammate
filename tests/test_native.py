@@ -3,12 +3,14 @@ import io
 import json
 import re
 import os
+import queue
 from pathlib import Path
 import sys
 import tempfile
 import threading
 import time
 import unittest
+from types import SimpleNamespace
 from unittest.mock import patch
 import urllib.error
 import urllib.parse
@@ -485,7 +487,7 @@ class ServiceConfigTests(unittest.TestCase):
 
 
 class BrowserTests(unittest.TestCase):
-    def drive(self, act, timeout=5, home='/unused', origin=None):
+    def drive(self, act, timeout=5, home='/unused', origin=None, stop=None):
         """Run the private form and let `act(url, origin)` play the browser's part."""
         errors = []; workers = []
         def browser(url):
@@ -496,13 +498,67 @@ class BrowserTests(unittest.TestCase):
             return True
         with patch('webbrowser.open', side_effect=browser):
             try:
-                result = private_browser_connect(BASE, Path(home), threading.Event(), timeout=timeout,
+                result = private_browser_connect(BASE, Path(home), stop if stop is not None else threading.Event(), timeout=timeout,
                                                  notify=None, origin=origin)
             except Exception as error:
                 result = error
         for worker in workers: worker.join(10)
         if errors: raise errors[0]
         return result
+
+    def drive_idle(self, act, timeout):
+        """Advance only the subject's clock at request boundaries, never wall time.
+
+        Requests still use the real threaded HTTP server and form handler. Waiting
+        for each handler to finish lets the loop renew its deadline before the
+        next scripted tick, regardless of scheduler or machine load. The real
+        asyncio/threading clocks are untouched; ten-second waits only bound a
+        broken fixture, not the consent window being tested.
+        """
+        from http.server import ThreadingHTTPServer
+
+        ticks = queue.Queue()
+        handled = threading.Event()
+        stop = threading.Event()
+        now = [0.0]
+
+        class Server(ThreadingHTTPServer):
+            def handle_request(server):
+                advance, has_request = ticks.get(timeout=10)
+                now[0] += advance
+                if has_request:
+                    handled.clear()
+                    previous_timeout = server.timeout
+                    server.timeout = 10  # Bound a missing browser without a short polling race.
+                    try:
+                        super().handle_request()
+                    finally:
+                        server.timeout = previous_timeout
+                    if not handled.wait(10):
+                        raise AssertionError('scripted HTTP request did not complete')
+
+            def process_request_thread(server, request, client_address):
+                try:
+                    super().process_request_thread(request, client_address)
+                finally:
+                    handled.set()
+
+        def tick(seconds, has_request=True):
+            ticks.put((seconds, has_request))
+
+        def browser(url, origin):
+            try:
+                act(url, origin, tick, stop)
+            except BaseException:
+                stop.set()
+                tick(0, has_request=False)
+                raise
+
+        with patch('amplifier_module_tool_teamwork.time',
+                   SimpleNamespace(monotonic=lambda: now[0])), \
+             patch('amplifier_module_tool_teamwork.ThreadingHTTPServer', Server):
+            result = self.drive(browser, timeout=timeout, stop=stop)
+        return result, now[0]
 
     def token(self, page):
         found = re.search(r'name="csrf" value="([^"]+)"', page)
@@ -649,16 +705,36 @@ class BrowserTests(unittest.TestCase):
 
     def test_activity_extends_the_idle_window(self):
         """The window measures inactivity, so filling the form cannot time it out."""
-        def act(url, origin):
+        def act(url, origin, tick, stop):
             for _ in range(4):
-                time.sleep(.35)
+                tick(.35)
                 with urllib.request.urlopen(url) as response: page = response.read().decode()
-            self.post(url, dict(FORM, csrf=self.token(page)), {'Origin': origin})
-        started = time.monotonic()
+            tick(0)
+            status, _ = self.post(url, dict(FORM, csrf=self.token(page)), {'Origin': origin})
+            self.assertEqual(status, 200)
         with patch('amplifier_module_tool_teamwork.connect', return_value=(Path('/private/fixture.json'), 'selected')):
-            result = self.drive(act, timeout=.6)
-        self.assertGreater(time.monotonic() - started, .6)
+            result, elapsed = self.drive_idle(act, timeout=.6)
+        self.assertGreater(elapsed, .6)
         self.assertEqual(result[1], 'selected')
+
+    def test_idle_window_expires_at_the_deadline_without_activity(self):
+        """Exactly reaching the idle limit must not be rescued by a late GET."""
+        def act(url, origin, tick, stop):
+            tick(.6, has_request=False)  # A poll timeout, with no form activity.
+            tick(0)
+            try:
+                with self.assertRaises(urllib.error.HTTPError) as raised:
+                    urllib.request.urlopen(url)
+                self.assertEqual(raised.exception.code, 410)
+                self.assertIn('expired', raised.exception.read().decode().lower())
+            finally:
+                stop.set()
+                tick(0, has_request=False)  # Release a pending grace-period poll.
+        with patch('amplifier_module_tool_teamwork.connect') as enroll:
+            result, elapsed = self.drive_idle(act, timeout=.6)
+        enroll.assert_not_called()
+        self.assertEqual(elapsed, .6)
+        self.assertIsInstance(result, ConsentAborted)
 
     def test_expired_window_explains_itself_instead_of_refusing_the_connection(self):
         late = {}
