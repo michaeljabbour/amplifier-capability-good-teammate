@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased — local runtime output containment
+
+- Refuse a symlinked `.capability-check` directory when generating machine-local behavior files. Existing output replacement remains explicit; no provider, enrollment or activation behavior changes.
+
 ## Unreleased — optional coaching checkpoint
 
 - Add a self-contained opt-in practice/review guide with a fictional task, preserved baseline, explicit scope/budget, user stop, reviewed keep/revert and private-by-choice records. Keep native operations, existing method budgets and evidence rules unchanged; no human efficacy or outside-use result is claimed.
