@@ -32,7 +32,8 @@ def runtime_data():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__);parser.add_argument("--output", type=Path, required=True);parser.add_argument("--replace", action="store_true");args=parser.parse_args()
-    output = args.output.resolve();local = (ROOT / ".capability-check").resolve()
+    output = args.output.resolve();local = ROOT.resolve() / ".capability-check"
+    if local.is_symlink():parser.error("Ignored .capability-check directory must not be a symlink")
     if not output.is_relative_to(local):parser.error("Generated machine-local paths must stay inside ignored .capability-check/")
     if output.suffix not in {".yaml", ".yml"}:parser.error("The native loader requires a YAML output filename")
     rendered = yaml.safe_dump(runtime_data(), sort_keys=False)
