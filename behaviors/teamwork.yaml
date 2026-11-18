@@ -4,11 +4,11 @@ bundle:
   description: Share opted-in visible turns and consume attributed project context with durable delivery receipts.
 hooks:
   - module: hooks-teamwork
-    source: git+https://github.com/michaeljabbour/amplifier-bundle-teamwork@main#subdirectory=modules/hooks-teamwork
+    source: git+https://github.com/michaeljabbour/amplifier-capability-good-teammate@main#subdirectory=modules/hooks-teamwork
     # Missing opt-in is inert; preserve an enrolled overlay's explicit config.
 tools:
   - module: tool-teamwork
-    source: git+https://github.com/michaeljabbour/amplifier-bundle-teamwork@main#subdirectory=modules/hooks-teamwork
+    source: git+https://github.com/michaeljabbour/amplifier-capability-good-teammate@main#subdirectory=modules/hooks-teamwork
   # tool-skills is composed by foundation (behaviors/agents.yaml); this entry only ADDS
   # to its search paths -- verified append, not replace, so foundation's own skills and
   # every other bundle's survive.
@@ -22,7 +22,7 @@ tools:
   - module: tool-skills
     config:
       skills:
-        - git+https://github.com/michaeljabbour/amplifier-bundle-teamwork@main#subdirectory=skills
+        - git+https://github.com/michaeljabbour/amplifier-capability-good-teammate@main#subdirectory=skills
 context:
   include:
     # Thin pointer only: may be enrolled / the excerpt is data / load the skill. The rules
